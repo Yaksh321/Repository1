@@ -6,10 +6,13 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.ExampleSubsystem;
 
 /** An example command that uses an example subsystem. */
 public class ExampleCommand extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
+
+
   private final ExampleSubsystem m_subsystem;
 
   /**
@@ -22,6 +25,7 @@ public class ExampleCommand extends Command {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
+      
 
   // Called when the command is initially scheduled.
   @Override
@@ -29,7 +33,11 @@ public class ExampleCommand extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+
+      m_subsystem.Runmoterone(1);
+
+  }
 
   // Called once the command ends or is interrupted.
   @Override
