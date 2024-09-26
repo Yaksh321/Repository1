@@ -11,18 +11,33 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  CANSparkMax motorOne;;
-
-
+  CANSparkMax motorOne;
+  CANSparkMax motorFront;
+  CANSparkMax motorBack;
+  
   public ExampleSubsystem() {
     motorOne = new CANSparkMax(14, MotorType.kBrushless);
+    motorFront = new CANSparkMax(14, MotorType.kBrushless);
+    motorBack = new CANSparkMax(11, MotorType.kBrushless);
   }
 
-    public void Runmoterone(float speed) {
+    public void runMotorOne(double speed) {
       motorOne.set(speed);
 
     }
+    
+    public void stopMotorOne() {
+      motorOne.stopMotor();
+    }
+  
+  public void runShooterMotorsOut (double speed) {
+    
+  }
 
+public void runShooterMotorsIn (double speed) {
+
+  runShooterMotorsIn(-0.5);
+  
 }
-
+  }
 

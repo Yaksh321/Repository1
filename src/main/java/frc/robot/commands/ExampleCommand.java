@@ -35,7 +35,7 @@ public class ExampleCommand extends Command {
   @Override
   public void execute() {
 
-      m_subsystem.Runmoterone(1);
+      m_subsystem.runMotorOne(.5);
 
   }
 
