@@ -14,11 +14,13 @@ public class ExampleSubsystem extends SubsystemBase {
   CANSparkMax motorOne;
   CANSparkMax motorFront;
   CANSparkMax motorBack;
+  int neGus;
   
   public ExampleSubsystem() {
     motorOne = new CANSparkMax(14, MotorType.kBrushless);
-    motorFront = new CANSparkMax(14, MotorType.kBrushless);
-    motorBack = new CANSparkMax(11, MotorType.kBrushless);
+    motorFront = new CANSparkMax(11, MotorType.kBrushless);
+ 
+    neGus = -1;
   }
 
     public void runMotorOne(double speed) {
@@ -27,17 +29,23 @@ public class ExampleSubsystem extends SubsystemBase {
     }
     
     public void stopMotorOne() {
+      motorFront.stopMotor();
       motorOne.stopMotor();
     }
   
-  public void runShooterMotorsOut (double speed) {
-    
-  }
-
-public void runShooterMotorsIn (double speed) {
-
-  runShooterMotorsIn(-0.5);
   
+    
+  
+
+public void runShooterMotors (double speed) {
+
+  motorOne.set(speed * neGus);
+
+  motorFront.set(speed * neGus);
+
+  neGus = neGus * -1;
+
+
 }
   }
 
